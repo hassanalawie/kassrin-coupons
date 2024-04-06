@@ -7,7 +7,7 @@ type CouponProps = {
 };
 
 const Coupon: React.FC<CouponProps> = ({ coupon }) => {
-  const { Name, color, Available, secondaryColor, ID } = coupon;
+  const { Name, color, secondaryColor, ID } = coupon;
   
   return (
     <div className="coupon">
