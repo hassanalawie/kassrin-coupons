@@ -4,6 +4,7 @@
   background-color: #ECE4B7;
   height:100%;
   padding:5rem;
+  width: 100%;
 }
 
 .title{
@@ -131,4 +132,14 @@
 .buttons{
   display: flex;
   justify-content: space-around;
+}
+
+
+@media (max-width: 508px) {
+  .App{
+    background-color: #ECE4B7;
+    height:100%;
+    padding:1rem;
+    width: 100%;
+  }
 }
