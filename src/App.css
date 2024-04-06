@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&display=swap');
+.App{
+  background-color: #ECE4B7;
+  height:100%;
+  padding:5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+  font-family: "Reem Kufi Fun", sans-serif;
+  margin:0;
+  font-size: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.subtitle{
+  font-family: "Reem Kufi Fun", sans-serif;
+  margin:0;
+  font-size: 20px;
+}
+
+/* App.css */
+.coupons-list {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.coupons-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 1 column by default, will fit more if space allows */
+  gap: 20px; /* Spacing between coupons */
+  padding: 20px; /* Spacing from the container edges */
+  margin-top: 100px;
+}
+
+/* Media query for laptop screens */
+@media (min-width: 768px) {
+  .coupons-list {
+    /* 2 columns on screens that are at least 768px wide */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Media query for desktops or larger screens, if needed */
+@media (min-width: 1024px) {
+  .coupons-list {
+    /* Adjust the number of columns and the minmax values as needed for larger screens */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .coupons-list {
+    display: block;
+  }
+}
+
+.overlay {
+  position: relative;
+  z-index: 0;
+}
+
+.overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: -1;
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #464D77;
+  padding: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.coupons-list div {
+  cursor: pointer; /* Indicates clickable items */
+}
+.couponDiv{
+  width: 100%;
+  height: 100%;
+}
+
+.closeButton{
+  z-index: 2;
+  background-color: #D72638;
   color: white;
+  font-weight: 700;
+  font-size: 40px;
+  width: max-content;
+  padding: 10px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+
 }
 
-.App-link {
-  color: #61dafb;
+.use{
+  z-index: 2;
+  background-color: #36827F;
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  width: max-content;
+  padding: 10px 50px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons{
+  display: flex;
+  justify-content: space-around;
 }
