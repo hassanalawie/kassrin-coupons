@@ -14,7 +14,7 @@ const Coupon: React.FC<CouponProps> = ({ coupon }) => {
       <div className='left'  style={{ backgroundColor: color }}>
         <h1>THIS COUPON IS VALID FOR</h1>
         <p className='couponName'>{Name.toUpperCase()}</p>
-        <p>Valid Until: April 7th 2025</p>
+        <p>Valid Until: April 7th 2026</p>
       </div>
       <div  className='right'  style={{ backgroundColor: secondaryColor }}>
         <div className="rotate">
